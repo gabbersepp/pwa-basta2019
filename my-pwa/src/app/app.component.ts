@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ToDo } from './todo';
 import { TodoService } from './todo.service';
 import { HttpClient } from '@angular/common/http';
+import { SwPush } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,17 @@ export class AppComponent {
 
   todos: ToDo[];
 
-  constructor(private toDoService: TodoService, private http: HttpClient) {
+  constructor(private toDoService: TodoService, private http: HttpClient, private swPush: SwPush) {
     setTimeout(() => this.getAll(), 500);
+    this.setupPush();
+  }
+
+  async setupPush() {
+    const subscription = await this.swPush.requestSubscription({
+      serverPublicKey: 'BLI8zF79Z1kCQq72RgzYs0WtQ0ojY3XCqPwmgcNP-8LJIeXRep9sv6h41hErJDewrm3WDbFMPyyPhYO7-ClXabQ'
+    });
+    console.log(subscription);
+    this.http.post('http://localhost:3030/push', subscription.toJSON()).subscribe();
   }
 
   public async sync(): Promise<void> {
