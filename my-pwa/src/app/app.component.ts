@@ -23,8 +23,17 @@ export class AppComponent {
     const subscription = await this.swPush.requestSubscription({
       serverPublicKey: 'BLI8zF79Z1kCQq72RgzYs0WtQ0ojY3XCqPwmgcNP-8LJIeXRep9sv6h41hErJDewrm3WDbFMPyyPhYO7-ClXabQ'
     });
+
+    this.swPush.notificationClicks.subscribe(data => {
+      console.log('geklickt');
+    });
+
     console.log(subscription);
     this.http.post('http://localhost:3030/push', subscription.toJSON()).subscribe();
+  }
+
+  public async updateTodo(todo: ToDo) {
+    await this.toDoService.todos.put(todo);
   }
 
   public async sync(): Promise<void> {
