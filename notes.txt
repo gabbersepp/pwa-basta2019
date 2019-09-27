@@ -1,0 +1,13 @@
+PWA sind Richtlinien, wie man eine App entwickeln soll
+PWA muss backwards compatible sein mit vermidnerten FEatureset
+pwa = serview roker api + web app manifest + https?
+pwa ist ein set an features, welche eine app untrstützen muss
+    Responsive, Linkable (man kann link kopieren und weitergeben), Discoverale (suchmaschinen sollen erkennen, dass es sich um PWA handelt)
+    , Installable (aus Browser heraus installiren), App-like, Connectvity independent (offlinefähigkeit), Fresh (anwendung kan sich selbst updaten, nicht wie bei Android wo plötzlich 50 updates im store auftauchen)
+        Safe, Re-engageable (app soll nutzer per Notifications infirmieren können), progressive (app erweitert sich, neue API kommt -> man nutzt sie aber in alten Browsern geht es trotzddm)
+
+https://pwapraxis.liebel.io/
+
+Responsive:
+    ertige frameworks
+    anular material, bootstrap, ngx-admin, foundation, framework7
