@@ -1,5 +1,10 @@
 <app-nav>
+    <ul>
+        <li *ngFor="let todo of todos">
+            <input type="checkbox" [checked]="todo.done"> {{ todo.title }}
+        </li>
+  </ul>
   <input type="text" #input /><button (click)="add(input.value)">Hinzufügen</button>
-  
+sdfs
   <router-outlet></router-outlet>
 </app-nav>

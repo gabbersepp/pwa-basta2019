@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToDo } from './todo';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-pwa';
 
-  public add(value: string) {
-    console.log(value);
+  todos: ToDo[];
+
+  constructor(private toDoService: TodoService) {
+    setTimeout(() => this.getAll(), 500);
+  }
+
+  public async add(title: string) {
+    await this.toDoService.todos.add({ id: Date.now().toString(), title, done: false });
+    this.getAll();
+  }
+
+  public async getAll(): Promise<void> {
+    const data = await this.toDoService.todos.toArray();
+    this.todos = data;
   }
 }
