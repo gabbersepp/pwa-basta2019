@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-pwa';
 
-  public add(): void {
-    
+  public add(value: string) {
+    console.log(value);
   }
 }
