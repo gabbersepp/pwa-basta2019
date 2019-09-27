@@ -1,8 +1,8 @@
 {
-  "name": "my-pwa",
-  "short_name": "my-pwa",
+  "name": "Basta PWA Workshop App",
+  "short_name": "basta",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#fbfbfb",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
