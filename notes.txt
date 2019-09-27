@@ -11,3 +11,10 @@ https://pwapraxis.liebel.io/
 Responsive:
     ertige frameworks
     anular material, bootstrap, ngx-admin, foundation, framework7
+    
+http://www.vysor.io/#pricing haben die  benutzt, um ANdroid auf windows zu nutzen
+
+linkable:
+    fb:// z.b. fb:// ist mit FB verknüpft
+    
+ng g c about -> generate component
